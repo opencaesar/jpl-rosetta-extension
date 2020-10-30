@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" name="viewpoint" version="12.0.0.2017041100">
+  <ownedViewpoints name="JPL" modelFileExtension="*.oml">
+    <ownedRepresentations xsi:type="description_1:EditionTableDescription" name="Organizations" domainClass="oml.DescriptionBundle">
+      <metamodel href="http://opencaesar.io/oml#/"/>
+      <ownedLineMappings name="Organization" domainClass="oml.ConceptInstance" semanticCandidatesExpression="aql:self.findNamedInstancesWithAbbreviatedTypeIri('project:Organization')">
+        <defaultForeground>
+          <foreGroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+        </defaultForeground>
+        <ownedSubLines name="Role" domainClass="oml.ConceptInstance" semanticCandidatesExpression="aql:self.findRelatedSourcesByAbbreviatedIri('project:belongsTo')">
+          <defaultForeground>
+            <foreGroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </defaultForeground>
+        </ownedSubLines>
+      </ownedLineMappings>
+      <ownedColumnMappings name="Label" headerLabelExpression="Label" featureName="value" featureParentExpression="aql:self.findAnnotationValuesForAbbreviatedIri('rdfs:label')->first()"/>
+      <ownedColumnMappings name="Role" headerLabelExpression="Role" featureName="name" featureParentExpression="aql: self.findRelatedTargetsByAbbreviatedIri('project:hasRole')->first()"/>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:EditionTableDescription" name="Programs" domainClass="oml.DescriptionBundle">
+      <metamodel href="http://opencaesar.io/oml#/"/>
+      <ownedLineMappings name="Program" domainClass="oml.ConceptInstance" semanticCandidatesExpression="aql:self.findNamedInstancesWithAbbreviatedTypeIri('project:Program')">
+        <defaultForeground>
+          <foreGroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+        </defaultForeground>
+        <ownedSubLines name="Project" domainClass="oml.ConceptInstance" semanticCandidatesExpression="aql:self.findRelatedTargetsByAbbreviatedIri('project:authorizes')">
+          <defaultForeground>
+            <foreGroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </defaultForeground>
+          <ownedSubLines name="WorkPackage" reusedSubLines="//@ownedViewpoints[name='JPL']/@ownedRepresentations[name='Programs']/@ownedLineMappings[name='Program']/@ownedSubLines[name='Project']/@ownedSubLines[name='WorkPackage']" reusedInMappings="//@ownedViewpoints[name='JPL']/@ownedRepresentations[name='Programs']/@ownedLineMappings[name='Program']/@ownedSubLines[name='Project']/@ownedSubLines[name='WorkPackage']" domainClass="oml.ConceptInstance" semanticCandidatesExpression="aql:self.findRelatedTargetsByAbbreviatedIri('project:authorizes')">
+            <defaultForeground>
+              <foreGroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </defaultForeground>
+          </ownedSubLines>
+        </ownedSubLines>
+      </ownedLineMappings>
+      <ownedColumnMappings name="Name" headerLabelExpression="Name" featureName="name"/>
+      <ownedColumnMappings name="Authority" headerLabelExpression="Authority" featureName="name" featureParentExpression="aql:self.findRelatedTargetsByAbbreviatedIri('project:isResponsibilityOf')->first()"/>
+      <ownedColumnMappings name="Supplies" headerLabelExpression="Supplies" featureName="name" featureParentExpression="aql:self.findRelatedTargetsByAbbreviatedIri('project:supplies')->first()"/>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:EditionTableDescription" name="Missions" domainClass="oml.DescriptionBundle">
+      <metamodel href="http://opencaesar.io/oml#/"/>
+      <ownedLineMappings name="Mission" domainClass="oml.ConceptInstance" semanticCandidatesExpression="aql:self.findNamedInstancesWithAbbreviatedTypeIri('mission:Mission')">
+        <defaultForeground>
+          <foreGroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+        </defaultForeground>
+        <ownedSubLines name="Component" domainClass="oml.ConceptInstance" semanticCandidatesExpression="aql:self.findRelatedTargetsByAbbreviatedIri('mission:deploys')">
+          <defaultForeground>
+            <foreGroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </defaultForeground>
+          <ownedSubLines name="SubComponent" reusedSubLines="//@ownedViewpoints[name='JPL']/@ownedRepresentations[name='Missions']/@ownedLineMappings[name='Mission']/@ownedSubLines[name='Component']/@ownedSubLines[name='SubComponent']" reusedInMappings="//@ownedViewpoints[name='JPL']/@ownedRepresentations[name='Missions']/@ownedLineMappings[name='Mission']/@ownedSubLines[name='Component']/@ownedSubLines[name='SubComponent']" domainClass="oml.ConceptInstance" semanticCandidatesExpression="aql:self.findRelatedTargetsByAbbreviatedIri('base:contains')">
+            <defaultForeground>
+              <foreGroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </defaultForeground>
+          </ownedSubLines>
+        </ownedSubLines>
+      </ownedLineMappings>
+      <ownedColumnMappings name="Name" headerLabelExpression="Name" featureName="name"/>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:EditionTableDescription" name="Subsystems" domainClass="oml.DescriptionBundle">
+      <metamodel href="http://opencaesar.io/oml#/"/>
+      <ownedLineMappings name="Subsystem" domainClass="oml.ConceptInstance" semanticCandidatesExpression="aql:self.findNamedInstancesWithAbbreviatedTypeIri('fse:Subsystem')">
+        <defaultForeground>
+          <foreGroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+        </defaultForeground>
+        <ownedSubLines name="Component" domainClass="oml.ConceptInstance" semanticCandidatesExpression="aql:self.findRelatedTargetsByAbbreviatedIri('base:aggregates')">
+          <defaultForeground>
+            <foreGroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </defaultForeground>
+        </ownedSubLines>
+      </ownedLineMappings>
+      <ownedColumnMappings name="Acronym" headerLabelExpression="Acronym" featureName="value" featureParentExpression="aql: self.findPropertyValuesByAbbreviatedIri(if self.hasAbbreviatedTypeIri('fse:Subsystem') then 'fse:hasSubsystemAcronym' else 'fse:hasAssemblyAcronym' endif)->first()"/>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:EditionTableDescription" name="Functions" domainClass="oml.DescriptionBundle">
+      <metamodel href="http://opencaesar.io/oml#/"/>
+      <ownedLineMappings name="Function" domainClass="oml.ConceptInstance" semanticCandidatesExpression="aql:self.findNamedInstancesWithAbbreviatedTypeIri('mission:Function')->select(i | i.findRelatedSourcesByAbbreviatedIri('mission:invokes')->isEmpty())">
+        <defaultForeground>
+          <foreGroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+        </defaultForeground>
+        <ownedSubLines name="SubFunction" reusedSubLines="//@ownedViewpoints[name='JPL']/@ownedRepresentations[name='Functions']/@ownedLineMappings[name='Function']/@ownedSubLines[name='SubFunction']" reusedInMappings="//@ownedViewpoints[name='JPL']/@ownedRepresentations[name='Functions']/@ownedLineMappings[name='Function']/@ownedSubLines[name='SubFunction']" domainClass="oml.ConceptInstance" semanticCandidatesExpression="aql:self.findRelatedTargetsByAbbreviatedIri('mission:invokes')">
+          <defaultForeground>
+            <foreGroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </defaultForeground>
+        </ownedSubLines>
+      </ownedLineMappings>
+      <ownedColumnMappings name="Name" headerLabelExpression="Name" featureName="name"/>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="io.opencaesar.oml.util.OmlRead"/>
+    <ownedJavaExtensions qualifiedClassName="io.opencaesar.oml.util.OmlSearch"/>
+  </ownedViewpoints>
+  <extensions xsi:type="properties:ViewExtensionDescription" name="Properties">
+    <categories name="Default Category">
+      <pages name="OML" labelExpression="OML" domainClass="oml.Element" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.1 //@extensions.0/@categories.0/@groups.2"/>
+      <groups name="ConceptInstance" labelExpression="Group" domainClass="oml.ConceptInstance" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:HyperlinkDescription" name="type" labelExpression="Type" valueExpression="aql:self.findTypes()->first()" displayExpression="aql:value.getIri()">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self"/>
+          </initialOperation>
+        </controls>
+        <controls xsi:type="properties:TextDescription" name="name" labelExpression="Name" valueExpression="feature:name">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+              <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="var:newValue"/>
+            </firstModelOperations>
+          </initialOperation>
+        </controls>
+      </groups>
+      <groups name="Assembly" labelExpression="Group" domainClass="oml.ConceptInstance" semanticCandidateExpression="var:self" preconditionExpression="aql:self.hasAbbreviatedTypeIri('fse:Assembly')" extends="//@extensions.0/@categories.0/@groups.0">
+        <controls xsi:type="properties:TextDescription" name="acronym" labelExpression="Acronym" valueExpression="aql: self.findPropertyValuesByAbbreviatedIri('fse:hasAssemblyAcronym')->first().value">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self"/>
+          </initialOperation>
+        </controls>
+        <controls xsi:type="properties:HyperlinkDescription" name="subsystem" labelExpression="Subsystem" valueExpression="aql:self.findRelatedSourcesByAbbreviatedIri('base:aggregates')->first()" displayExpression="aql:value.getIri()">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self"/>
+          </initialOperation>
+        </controls>
+        <controls xsi:type="properties:HyperlinkDescription" name="container" labelExpression="Container" valueExpression="aql:self.findRelatedSourcesByAbbreviatedIri('base:contains')->first()" displayExpression="aql:value.getIri()">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self"/>
+          </initialOperation>
+        </controls>
+      </groups>
+      <groups name="Subsystem" labelExpression="Group" domainClass="oml.ConceptInstance" semanticCandidateExpression="var:self" preconditionExpression="aql:self.hasAbbreviatedTypeIri('fse:Subsystem')" extends="//@extensions.0/@categories.0/@groups.0">
+        <controls xsi:type="properties:TextDescription" name="acronym" labelExpression="Acronym" valueExpression="aql: self.findPropertyValuesByAbbreviatedIri('fse:hasSubsystemAcronym')->first().value">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self"/>
+          </initialOperation>
+        </controls>
+      </groups>
+    </categories>
+  </extensions>
+</description:Group>
