@@ -1,6 +1,6 @@
 # JPL Rosetta Extension
 
-An extension to the Rosetta IDE providing a viewpoint for the JPL vocabularies
+An extension to the Rosetta IDE providing a UI viewpoint for the JPL vocabularies
 
 ## Installation
 
