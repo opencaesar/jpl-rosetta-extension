@@ -2,7 +2,7 @@
 <?eclipse version="3.0"?>
 <plugin>
   <extension point="org.eclipse.sirius.componentization">
-    <component class="io.opencaesar.rosetta.jpl.Activator"
+    <component class="io.opencaesar.rosetta.imce.Activator"
                id="viewpoint"
 	       name="viewpoint">
     </component>

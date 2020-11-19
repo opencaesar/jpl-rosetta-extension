@@ -1,4 +1,4 @@
-package io.opencaesar.rosetta.jpl;
+package io.opencaesar.rosetta.imce;
 
 import java.util.HashSet;
 import java.util.Set;

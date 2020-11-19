@@ -1,6 +1,6 @@
-# JPL Rosetta Extension
+# IMCE Rosetta Extension
 
-An extension to the Rosetta IDE providing a UI viewpoint for the JPL vocabularies
+An extension to the Rosetta IDE providing a UI viewpoint for the IMCE vocabularies
 
 ## Installation
 
@@ -10,10 +10,10 @@ Another method is installing it as a plugin in the Rosetta IDE (work-to-go)
 
 ## Usage
 
-Once the extension is installed (see above), it can be used on an OML project using the JPL vocabularies in a Rosetta workspace as follows:
+Once the extension is installed (see above), it can be used on an OML project using the IMCE vocabularies in a Rosetta workspace as follows:
 
 - Right click on the project and select Configure -> Convert to Modeling Project
-- Right click on the project (one more time) and select Viewpoints Selection. Check the JPL option.
+- Right click on the project (one more time) and select Viewpoints Selection. Check the IMCE option.
 - Double click on the file representations.aird to open its editor.
 - From the Representation section, click on the New... button and select one of the representation kinds to create.
 - Give the representation a meaningful name, and click Next. Select a description bundle ontology and click Finish.

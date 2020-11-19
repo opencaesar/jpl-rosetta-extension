@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" name="viewpoint" version="12.0.0.2017041100">
-  <ownedViewpoints name="JPL" modelFileExtension="*.oml">
+  <ownedViewpoints name="IMCE" modelFileExtension="*.oml">
     <ownedRepresentations xsi:type="description_1:EditionTableDescription" name="Organizations" domainClass="oml.DescriptionBundle">
       <metamodel href="http://opencaesar.io/oml#/"/>
       <ownedLineMappings name="Organization" domainClass="oml.ConceptInstance" semanticCandidatesExpression="aql:self.findNamedInstancesWithAbbreviatedTypeIri('project:Organization')">
@@ -26,7 +26,7 @@
           <defaultForeground>
             <foreGroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </defaultForeground>
-          <ownedSubLines name="WorkPackage" reusedSubLines="//@ownedViewpoints[name='JPL']/@ownedRepresentations[name='Programs']/@ownedLineMappings[name='Program']/@ownedSubLines[name='Project']/@ownedSubLines[name='WorkPackage']" reusedInMappings="//@ownedViewpoints[name='JPL']/@ownedRepresentations[name='Programs']/@ownedLineMappings[name='Program']/@ownedSubLines[name='Project']/@ownedSubLines[name='WorkPackage']" domainClass="oml.ConceptInstance" semanticCandidatesExpression="aql:self.findRelatedTargetsByAbbreviatedIri('project:authorizes')">
+          <ownedSubLines name="WorkPackage" reusedSubLines="//@ownedViewpoints[name='IMCE']/@ownedRepresentations[name='Programs']/@ownedLineMappings[name='Program']/@ownedSubLines[name='Project']/@ownedSubLines[name='WorkPackage']" reusedInMappings="//@ownedViewpoints[name='IMCE']/@ownedRepresentations[name='Programs']/@ownedLineMappings[name='Program']/@ownedSubLines[name='Project']/@ownedSubLines[name='WorkPackage']" domainClass="oml.ConceptInstance" semanticCandidatesExpression="aql:self.findRelatedTargetsByAbbreviatedIri('project:authorizes')">
             <defaultForeground>
               <foreGroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </defaultForeground>
@@ -47,7 +47,7 @@
           <defaultForeground>
             <foreGroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </defaultForeground>
-          <ownedSubLines name="SubComponent" reusedSubLines="//@ownedViewpoints[name='JPL']/@ownedRepresentations[name='Missions']/@ownedLineMappings[name='Mission']/@ownedSubLines[name='Component']/@ownedSubLines[name='SubComponent']" reusedInMappings="//@ownedViewpoints[name='JPL']/@ownedRepresentations[name='Missions']/@ownedLineMappings[name='Mission']/@ownedSubLines[name='Component']/@ownedSubLines[name='SubComponent']" domainClass="oml.ConceptInstance" semanticCandidatesExpression="aql:self.findRelatedTargetsByAbbreviatedIri('base:contains')">
+          <ownedSubLines name="SubComponent" reusedSubLines="//@ownedViewpoints[name='IMCE']/@ownedRepresentations[name='Missions']/@ownedLineMappings[name='Mission']/@ownedSubLines[name='Component']/@ownedSubLines[name='SubComponent']" reusedInMappings="//@ownedViewpoints[name='IMCE']/@ownedRepresentations[name='Missions']/@ownedLineMappings[name='Mission']/@ownedSubLines[name='Component']/@ownedSubLines[name='SubComponent']" domainClass="oml.ConceptInstance" semanticCandidatesExpression="aql:self.findRelatedTargetsByAbbreviatedIri('base:contains')">
             <defaultForeground>
               <foreGroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </defaultForeground>
@@ -76,7 +76,7 @@
         <defaultForeground>
           <foreGroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
         </defaultForeground>
-        <ownedSubLines name="SubFunction" reusedSubLines="//@ownedViewpoints[name='JPL']/@ownedRepresentations[name='Functions']/@ownedLineMappings[name='Function']/@ownedSubLines[name='SubFunction']" reusedInMappings="//@ownedViewpoints[name='JPL']/@ownedRepresentations[name='Functions']/@ownedLineMappings[name='Function']/@ownedSubLines[name='SubFunction']" domainClass="oml.ConceptInstance" semanticCandidatesExpression="aql:self.findRelatedTargetsByAbbreviatedIri('mission:invokes')">
+        <ownedSubLines name="SubFunction" reusedSubLines="//@ownedViewpoints[name='IMCE']/@ownedRepresentations[name='Functions']/@ownedLineMappings[name='Function']/@ownedSubLines[name='SubFunction']" reusedInMappings="//@ownedViewpoints[name='IMCE']/@ownedRepresentations[name='Functions']/@ownedLineMappings[name='Function']/@ownedSubLines[name='SubFunction']" domainClass="oml.ConceptInstance" semanticCandidatesExpression="aql:self.findRelatedTargetsByAbbreviatedIri('mission:invokes')">
           <defaultForeground>
             <foreGroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </defaultForeground>
