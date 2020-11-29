@@ -68,7 +68,7 @@
           </defaultForeground>
         </ownedSubLines>
       </ownedLineMappings>
-      <ownedColumnMappings name="Acronym" headerLabelExpression="Acronym" featureName="value" featureParentExpression="aql: self.findPropertyValuesByAbbreviatedIri(if self.hasAbbreviatedTypeIri('fse:Subsystem') then 'fse:hasSubsystemAcronym' else 'fse:hasAssemblyAcronym' endif)->first()"/>
+      <ownedColumnMappings name="Acronym" headerLabelExpression="Acronym" featureName="value" featureParentExpression="aql: self.findPropertyValuesByAbbreviatedIri(if self.hasAbbreviatedTypeIri('fse:Subsystem') then 'fse:hasAcronym' else 'fse:hasAcronym' endif)->first()"/>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:EditionTableDescription" name="Functions" domainClass="oml.DescriptionBundle">
       <metamodel href="http://opencaesar.io/oml#/"/>
@@ -105,7 +105,7 @@
         </controls>
       </groups>
       <groups name="Assembly" labelExpression="Group" domainClass="oml.ConceptInstance" semanticCandidateExpression="var:self" preconditionExpression="aql:self.hasAbbreviatedTypeIri('fse:Assembly')" extends="//@extensions.0/@categories.0/@groups.0">
-        <controls xsi:type="properties:TextDescription" name="acronym" labelExpression="Acronym" valueExpression="aql: self.findPropertyValuesByAbbreviatedIri('fse:hasAssemblyAcronym')->first().value">
+        <controls xsi:type="properties:TextDescription" name="acronym" labelExpression="Acronym" valueExpression="aql: self.findPropertyValuesByAbbreviatedIri('fse:hasAcronym')->first().oclAsType(oml::QuotedLiteral).value">
           <initialOperation>
             <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self"/>
           </initialOperation>
@@ -122,7 +122,7 @@
         </controls>
       </groups>
       <groups name="Subsystem" labelExpression="Group" domainClass="oml.ConceptInstance" semanticCandidateExpression="var:self" preconditionExpression="aql:self.hasAbbreviatedTypeIri('fse:Subsystem')" extends="//@extensions.0/@categories.0/@groups.0">
-        <controls xsi:type="properties:TextDescription" name="acronym" labelExpression="Acronym" valueExpression="aql: self.findPropertyValuesByAbbreviatedIri('fse:hasSubsystemAcronym')->first().value">
+        <controls xsi:type="properties:TextDescription" name="acronym" labelExpression="Acronym" valueExpression="aql: self.findPropertyValuesByAbbreviatedIri('fse:hasAcronym')->first().oclAsType(oml::QuotedLiteral).value">
           <initialOperation>
             <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self"/>
           </initialOperation>
